@@ -20,7 +20,7 @@ async def on_message(message):
         input_string= message.content[2:].title().strip()
         response=requests.get('https://peaceful-hamlet-39904.herokuapp.com/player/{player}'.format(player = input_string))
         if (response.text == "Error - No player by that name was found.") :
-            await message.channel.send("Error Occured")
+            await message.channel.send("Error - No player by that name was found. Please check your spelling.")
             return
         response_json=json.loads(response.text)
         player_idpy = response_json['player_id']
