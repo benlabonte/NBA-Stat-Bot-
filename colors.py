@@ -28,3 +28,4 @@ class colors:
     Raptors = 0xce1140
     Jazz = 0x002b5c
     Wizards = 0xe31837
+    Bulls = 0xce1140
