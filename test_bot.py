@@ -46,7 +46,7 @@ async def on_message(message):
         color=getattr(colors, team_colour_lookup))
 
         embed_data.set_thumbnail(url='https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/{id}.png'.format(id=player_idpy))
-        embed_data.add_field(name='**Seasonal Average Statline** ({timeframe})'.format(timeframe=timeframepy), value='Pts: {pts} - Reb: {reb} - Ast: {ast:}'.format(pts=ptspy, reb=rebpy, ast=astpy), inline=False)
+        embed_data.add_field(name='**Seasonal Average Statline** ({timeframe})'.format(timeframe=timeframepy), value='Pts: {pts} - Reb: {reb} - Ast: {ast}'.format(pts=ptspy, reb=rebpy, ast=astpy), inline=False)
         await message.channel.send(embed=embed_data)
 
 client.run(Token)
