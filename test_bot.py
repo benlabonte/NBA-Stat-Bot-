@@ -18,7 +18,18 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith('!p'):
         input_string= message.content[2:].title().strip()
-        response=requests.get('https://peaceful-hamlet-39904.herokuapp.com/player/{player}'.format(player = input_string))
+        if input_string.lower() == 'lebron james':
+            response=requests.get('https://peaceful-hamlet-39904.herokuapp.com/player/LeBron James')
+        elif input_string.lower()=='demar derozan':
+            response=requests.get('https://peaceful-hamlet-39904.herokuapp.com/player/DeMar DeRozan')
+        elif input_string.lower()== 'lamarcus aldridge':
+            response=requests.get('https://peaceful-hamlet-39904.herokuapp.com/player/LaMarcus Aldridge')
+        elif input_string.lower()== 'fred vanvleet':
+            response=requests.get('https://peaceful-hamlet-39904.herokuapp.com/player/Fred VanVleet')
+        elif input_string.lower()=='lamelo ball':
+            response=requests.get('https://peaceful-hamlet-39904.herokuapp.com/player/LaMelo Ball')
+        else:
+            response=requests.get('https://peaceful-hamlet-39904.herokuapp.com/player/{player}'.format(player = input_string))
         if (response.text == "Error - No player by that name was found.") :
             embed_data=discord.Embed(
                 title='Error',
