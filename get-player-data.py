@@ -23,9 +23,9 @@ for i in range (0, players_length):
     player_stats = {}
     player_id = player_dict[i]['id']
     print("Now processing ", player_id)
-    time.sleep(.1000)
+    time.sleep(.2000)
     req = commonplayerinfo.CommonPlayerInfo(player_id)
-    time.sleep(.5000)
+    time.sleep(.2000)
     data = json.loads(req.get_json())
     player_personal_data = data["resultSets"][0]
     player_data = data["resultSets"][1]
