@@ -12,6 +12,7 @@ multidict==5.2.0
 nba-api==1.1.10
 numpy==1.21.4
 python-dotenv==0.19.1
+psycopg2-binary==2.9.1
 requests==2.26.0
 soupsieve==2.3
 typing-extensions==3.10.0.2
