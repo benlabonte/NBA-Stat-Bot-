@@ -13,7 +13,7 @@ pw = os.getenv('PASSWORD')
 
 # Get all active NBA Players
 player_dict = players.get_active_players()
-time.sleep(.1000)
+time.sleep(.2000)
 print(player_dict)
 # Create a new array to store the new information
 players_length = len(player_dict)
