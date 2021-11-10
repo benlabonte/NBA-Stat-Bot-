@@ -10,7 +10,8 @@ from dotenv import load_dotenv
 load_dotenv()
 token = os.getenv('BITTOKEN')
 pw = os.getenv('PASSWORD')
-fixie = os.getenv('FIXIE_URL')
+os.environ['http_proxy'] = os.environ.get('FIXIE_URL', '')
+os.environ['https_proxy'] = os.environ.get('FIXIE_URL', '')
 
 # Get all active NBA Players
 player_dict = players.get_active_players()
@@ -24,7 +25,7 @@ for i in range (0, players_length):
     playerid = player_dict[i]['id']
     print("Now processing ", playerid)
     time.sleep(.600)
-    req = commonplayerinfo.CommonPlayerInfo(player_id=playerid, proxy=fixie)
+    req = commonplayerinfo.CommonPlayerInfo(player_id=playerid)
     data = json.loads(req.get_json())
     player_personal_data = data["resultSets"][0]
     player_data = data["resultSets"][1]
