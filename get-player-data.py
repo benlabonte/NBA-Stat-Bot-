@@ -10,8 +10,6 @@ from dotenv import load_dotenv
 load_dotenv()
 token = os.getenv('BITTOKEN')
 pw = os.getenv('PASSWORD')
-os.environ['http_proxy'] = os.environ.get('FIXIE_URL', '')
-os.environ['https_proxy'] = os.environ.get('FIXIE_URL', '')
 
 # Get all active NBA Players
 player_dict = players.get_active_players()
